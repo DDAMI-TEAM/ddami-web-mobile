@@ -8,9 +8,9 @@ function Login(){
           <Form>
             <LoginLetter>Login</LoginLetter>
             아이디<br/>
-            <IDInput type = "text" name = "id"/><br/>
+            <IDInput type = "text" name = "id" onchange = {idhandle}/><br/>
             비밀번호<br/>
-            <Passwords type = "text" name = "password"/><br/>  
+            <Passwords type = "text" name = "password" onchange = {passwordhandle}/><br/>  
             <Forgot>
             비밀번호를 잊으셨나요?
             </Forgot><br/>

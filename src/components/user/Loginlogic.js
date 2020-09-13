@@ -15,6 +15,7 @@ passwordhandle = (e) =>{
         password:e.target.value
     });
 }
-handleSubmit = (e) => {
+submithandle = (e) => {
     e.preventDefault();
 ​}
+
