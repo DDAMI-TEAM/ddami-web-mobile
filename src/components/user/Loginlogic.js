@@ -1,10 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
-
-import { Link } from "react-router-dom";
-
-function Login(){
-  export default () => {
+// 로그인에 들어가는 id,password
+export default () => {
 
     const [Id, setId] = useState("");
     const [Password, setPassword] = useState("");
@@ -20,16 +15,16 @@ function Login(){
         }
      })
 
-  handledid = (e) =>{
-      setId(e.currentTarget.value);
-  }
-  handledpassword = (e) =>{
-     setPassword(e.currentTarget.value);
-  }
+handledid = (e) =>{
+    setId(e.currentTarget.value);
+}
+handledpassword = (e) =>{
+   setPassword(e.currentTarget.value);
+}
 
 const submit = (Login) => {
     return (
-        // 사이트 주소
+        // 사이트 주소 비워둠
          fetch("", Form)
            .then(alert("1"))
           .then(this.props.history.push("/"))
@@ -49,11 +44,11 @@ const submit = (Login) => {
         <Title>Login</Title>
         <LoginForm>
           <label>아이디</label>
-          <input type="text" name="id" onchange = {handledid}/>
+          <input type="text" name="id"/>
           <label>비밀번호</label>
-          <input type="password" name="password" onchange = {handledpassword}/>
+          <input type="password" name="password"/>
           <Forgot>비밀번호를 잊으셨나요?</Forgot>
-          <LoginButton>로그인</LoginButton> 
+          <LoginButton>로그인</LoginButton>
           <Join>회원이 아니십니까?<Link to='/join'>회원 가입</Link></Join>
           <SocialLogin>
             <p>다음 계정으로 로그인</p>
@@ -63,7 +58,3 @@ const submit = (Login) => {
       </Login>
     );
 }
-}
-
-
-export default Login;

@@ -94,5 +94,4 @@ function Replyspace() {
     );
 }
 
-/*댓글에 아무것도 입력되지 않았을 때는 댓글이 엔터되는걸 막아줌*/
 export default Replyspace;
