@@ -17,7 +17,7 @@ function Login(){
         return () => {
             dispatch(setHeaderVisible(true))
         dispatch(setFooterVisible(true))
-        }
+        } 
      })
 
   handledid = (e) =>{
