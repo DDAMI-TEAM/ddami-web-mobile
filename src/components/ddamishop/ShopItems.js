@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Menu from "./Menu";
 import SortMenu from "./SortMenu";
 import FilterList from "./FilterList";
-import PreviewArticle from "../main/PreviewArticle";
+import PreviewArticle from "../common/PreviewArticle";
 
 const ComponentWrapper = styled.div`
   width: 100%;
