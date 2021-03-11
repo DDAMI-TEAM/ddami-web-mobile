@@ -9,7 +9,8 @@ import Page from "./pages";
 const GlobalStyle = createGlobalStyle`
   ${reset}
   body {
-    color: #3C3C3C;
+    color: #101010;
+    background-color: #F4F0F8;
     font-family: 'NanumSquare';
     height: 100vh;
     font-size: 14px;
