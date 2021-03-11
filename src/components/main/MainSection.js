@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import PreviewArticle from "./PreviewArticle";
+import PreviewArticle from "../common/PreviewArticle";
 import { Link } from "react-router-dom";
 import { TEXT, TYPE } from "../../constants";
+import { mixin } from "../../styles";
 
 const MainDdamiShop = ({ type = TYPE.MAIN_TYPE.TOWN }) => {
   const { MAIN_TEXT } = TEXT;
@@ -12,7 +13,7 @@ const MainDdamiShop = ({ type = TYPE.MAIN_TYPE.TOWN }) => {
       <Header>
         <Title>{MAIN_TEXT[type].TITLE}</Title>
         <Description>{MAIN_TEXT[type].SUBTEXT}</Description>
-        <MoreButton to="/shop/pieces">더보기 ></MoreButton>
+        <MoreButton to={MAIN_TEXT[type].LINK}>더보기 ></MoreButton>
       </Header>
       <ArticleWrapper>
         <PreviewArticle type={type} />
@@ -60,8 +61,5 @@ const MoreButton = styled(Link)`
 `;
 
 const ArticleWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-around;
+  ${mixin.flexGrid}
 `;
