@@ -2,14 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { TYPE } from "../../constants";
+import { mixin } from "../../styles";
 
 const PreviewArticle = ({ type }) => {
   return (
     <Wrapper>
       <Link to="/detail/1">
-        <ImgBox>
+        <ImageWrapper>
           <img src={process.env.PUBLIC_URL + "/dummy/22.png"} alt="dummy" />
-        </ImgBox>
+        </ImageWrapper>
       </Link>
       <ProductName>작품 이름 (한 줄 이상은 말을 줄입니다)</ProductName>
       {type === TYPE.MAIN_TYPE.SHOP && (
@@ -27,39 +28,35 @@ const PreviewArticle = ({ type }) => {
 export default PreviewArticle;
 
 const Wrapper = styled.div`
-  height: 160px;
+  width: 48%;
   margin-bottom: 18px;
 `;
 
-const ImgBox = styled.div`
-  height: 114px;
+const ImageWrapper = styled.div`
+  width: 100%;
+  margin-bottom: 3px;
+  img {
+    width: 100%;
+  }
 `;
 
-const ProductName = styled.p`
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  max-height: 1.5rem;
+const ProductName = styled.div`
+  ${mixin.shorthand}
   max-width: 100%;
-  font-size: 14px;
   font-weight: bold;
   margin: 5px 0;
 `;
 
 const UniversityName = styled.p`
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  max-height: 1.5rem;
-  max-width: 100%;
+  ${mixin.shorthand}
+  width: 100%;
+  margin-bottom: 6px;
   font-size: 12px;
-  color: #808080;
-  margin: 5px 0;
+  color: ${({ theme }) => theme.colors.maingray};
 `;
 
 const Price = styled.p`
-  font-size: 14px;
-  font-weight: bold;
-  color: #322fa0;
-  margin: 5px 0;
+  margin-bottom: 7px;
+  font-weight: 800;
+  color: ${({ theme }) => theme.colors.purple2};
 `;

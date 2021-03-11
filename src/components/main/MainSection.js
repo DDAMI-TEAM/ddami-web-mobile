@@ -27,13 +27,13 @@ const MainDdamiShop = ({ type = TYPE.MAIN_TYPE.TOWN }) => {
 export default MainDdamiShop;
 
 const Wrapper = styled.div`
-  position: relative;
   margin-bottom: 6px;
-  padding: 26px 16px;
+  padding: 26px 16px 10px 16px;
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
 const Header = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: baseline;
@@ -54,15 +54,14 @@ const Description = styled.p`
 const MoreButton = styled(Link)`
   position: absolute;
   right: 0;
+  bottom: 0;
   font-size: 12px;
   color: ${({ theme }) => theme.colors.lightgray};
 `;
 
 const ArticleWrapper = styled.div`
   display: flex;
-  flex: 1 1;
-  /* flex-direction: column; */
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-content: space-around;
 `;
