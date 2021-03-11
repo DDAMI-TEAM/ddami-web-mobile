@@ -5,6 +5,7 @@ import { TYPE } from "../../constants";
 import { mixin } from "../../styles";
 
 const PreviewArticle = ({ type }) => {
+  const { MAIN_TYPE } = TYPE;
   return (
     <Wrapper>
       <Link to="/detail/1">
@@ -13,7 +14,7 @@ const PreviewArticle = ({ type }) => {
         </ImageWrapper>
       </Link>
       <ProductName>작품 이름 (한 줄 이상은 말을 줄입니다)</ProductName>
-      {type === TYPE.MAIN_TYPE.SHOP && (
+      {type === MAIN_TYPE.SHOP && (
         <>
           <UniversityName>대학교 이름</UniversityName>
           <Price>15,000원</Price>
