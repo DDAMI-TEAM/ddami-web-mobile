@@ -1,14 +1,15 @@
 import React from "react";
 import MainBanner from "../components/main/MainBanner";
-import MainDdamiShop from "../components/main/MainDdamiShop";
-import MainDdamiMaeul from "../components/main/MainDdamiMaeul";
+import MainSection from "../components/main/MainSection";
+import { TYPE } from "../constants";
 
 function Main() {
+  const { MAIN_TYPE } = TYPE;
   return (
     <>
       <MainBanner />
-      <MainDdamiShop />
-      <MainDdamiMaeul />
+      <MainSection type={MAIN_TYPE.TOWN} />
+      <MainSection type={MAIN_TYPE.SHOP} />
     </>
   );
 }
