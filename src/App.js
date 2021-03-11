@@ -1,8 +1,9 @@
 import React from "react";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { BrowserRouter } from "react-router-dom";
+import { theme } from "./styles";
 import "./App.css";
-import {createGlobalStyle} from "styled-components";
 import Page from "./pages";
-import {BrowserRouter} from "react-router-dom";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -22,10 +23,12 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   return (
-    <BrowserRouter>
-      <GlobalStyle/>
-      <Page/>
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <GlobalStyle />
+        <Page />
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
