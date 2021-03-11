@@ -22,10 +22,16 @@ const radius = {
   main: "44px 4px 44px 44px",
 };
 
+const border = {
+  light: "0.5px solid #DBDBDB",
+  purple: "0.5px solid #9472B6",
+};
+
 const theme = {
   colors,
   background,
   radius,
+  border,
 };
 
 export default theme;

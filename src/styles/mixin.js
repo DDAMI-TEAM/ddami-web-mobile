@@ -17,8 +17,16 @@ const shorthand = css`
   white-space: nowrap;
 `;
 
+const flexGrid = css`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-around;
+`;
+
 const mixin = {
   flex,
+  flexGrid,
   shorthand,
 };
 
