@@ -18,6 +18,7 @@ const colors = {
 
 const background = {
   main: "linear-gradient(270deg, #6F5DB4 0%, #A36A9B 100%)",
+  modal: "rgb(116, 116, 116, 0.9)",
 };
 
 const radius = {

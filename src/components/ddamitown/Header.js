@@ -1,19 +1,25 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import FilterModal from "../common/filterModal";
+import { setTownFilterModal } from "../../store/actions";
 
 const Header = () => {
+  const dispatch = useDispatch();
   const { modalState } = useSelector((store) => {
     return store.town;
   });
+
+  const onClickFilterButton = () => dispatch(setTownFilterModal(true));
+  const closeModal = () => dispatch(setTownFilterModal(false));
+
   return (
     <Wrapper>
       <SortText active={true}>인기순</SortText>
       <VerticalLine>|</VerticalLine>
       <SortText>최신순</SortText>
-      <FilterButton>필터</FilterButton>
-      {modalState && <FilterModal />}
+      <FilterButton onClick={onClickFilterButton}>필터</FilterButton>
+      {modalState && <FilterModal setClose={closeModal} />}
     </Wrapper>
   );
 };
