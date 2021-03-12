@@ -1,15 +1,19 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import FilterModal from "../common/filterModal";
 
 const Header = () => {
+  const { modalState } = useSelector((store) => {
+    return store.town;
+  });
   return (
     <Wrapper>
       <SortText active={true}>인기순</SortText>
       <VerticalLine>|</VerticalLine>
       <SortText>최신순</SortText>
       <FilterButton>필터</FilterButton>
-      <FilterModal />
+      {modalState && <FilterModal />}
     </Wrapper>
   );
 };
