@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import FilterModal from "../common/filterModal";
 
 const Header = () => {
   return (
@@ -8,6 +9,7 @@ const Header = () => {
       <VerticalLine>|</VerticalLine>
       <SortText>최신순</SortText>
       <FilterButton>필터</FilterButton>
+      <FilterModal />
     </Wrapper>
   );
 };
