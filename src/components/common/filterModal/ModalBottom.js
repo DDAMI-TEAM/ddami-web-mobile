@@ -30,8 +30,7 @@ const Button = styled.button`
 `;
 
 const ApplyButton = styled(Button)`
-  background: ${({ active, theme }) =>
-    active ? theme.background.main : theme.colors.lightgray};
+  background: ${({ theme }) => theme.background.main};
   border-radius: 0 0 7px 0;
   color: ${({ theme }) => theme.colors.white};
 `;

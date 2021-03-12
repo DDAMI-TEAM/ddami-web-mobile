@@ -30,6 +30,7 @@ const border = {
   light: "0.5px solid #DBDBDB",
   gray: "1px solid #E4E4E4",
   purple: "0.5px solid #9472B6",
+  active: "0.5px solid #9472B6",
 };
 
 const theme = {
