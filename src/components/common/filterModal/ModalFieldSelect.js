@@ -15,7 +15,7 @@ const ModalFieldSelect = ({
   activeAll,
   setActive,
 }) => {
-  const onClickFilter = () => setActive(id);
+  const onClickFilter = () => setActive(id, name);
   return (
     <>
       {type === FILTER_TYPE.ALL && (

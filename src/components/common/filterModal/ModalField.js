@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import ModalFieldSelect, { FILTER_TYPE } from "./ModalFieldSelect";
 import { mixin } from "../../../styles";
@@ -6,15 +6,28 @@ import { mixin } from "../../../styles";
 const ModalField = ({ title, data }) => {
   const [activeFilters, setActiveFilters] = useState([]);
 
-  const setActive = (id) => {
-    if (data.length === activeFilters.length) return setActiveFilters([id]);
-    if (!activeFilters.includes(id)) setActiveFilters([...activeFilters, id]);
-    else setActiveFilters(activeFilters.filter((activeId) => activeId !== id));
+  const isActive = (id) => {
+    return activeFilters.some((filter) => filter.id === id);
   };
+
+  const setActive = (id, name) => {
+    if (data.length === activeFilters.length)
+      return setActiveFilters([{ id, name }]);
+    if (isActive(id)) {
+      const removedFilters = activeFilters.filter(
+        (activeFilter) => activeFilter.id !== id
+      );
+      setActiveFilters(removedFilters);
+    } else setActiveFilters([...activeFilters, { id, name }]);
+  };
+
+  useEffect(() => {
+    console.log(activeFilters);
+  }, [activeFilters]);
 
   const setActiveAllFilter = () => {
     if (data.length === activeFilters.length) setActiveFilters([]);
-    else setActiveFilters(data.map(({ id }) => id));
+    else setActiveFilters(data.map(({ id, name }) => ({ id, name })));
   };
 
   return (
@@ -33,7 +46,7 @@ const ModalField = ({ title, data }) => {
             type={FILTER_TYPE.SPECIFIC}
             id={id}
             name={name}
-            active={activeFilters.includes(id)}
+            active={isActive(id)}
             activeAll={data.length === activeFilters.length}
             setActive={setActive}
           />
