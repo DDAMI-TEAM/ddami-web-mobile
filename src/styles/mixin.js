@@ -17,10 +17,10 @@ const shorthand = css`
   white-space: nowrap;
 `;
 
-const flexGrid = css`
+const flexGrid = (justifyContent = "space-between") => css`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: ${justifyContent};
   align-content: space-around;
 `;
 

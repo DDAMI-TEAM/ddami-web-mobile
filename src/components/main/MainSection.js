@@ -61,5 +61,5 @@ const MoreButton = styled(Link)`
 `;
 
 const ArticleWrapper = styled.div`
-  ${mixin.flexGrid}
+  ${mixin.flexGrid()}
 `;

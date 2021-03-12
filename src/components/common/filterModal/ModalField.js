@@ -3,16 +3,15 @@ import styled from "styled-components";
 import ModalFieldSelect from "./ModalFieldSelect";
 import { mixin } from "../../../styles";
 
-const ModalField = () => {
+const ModalField = ({ title, data }) => {
   return (
     <Wrapper>
-      <Title>공간디자인</Title>
+      <Title>{title}</Title>
       <SelectList>
         <ModalFieldSelect />
-        <ModalFieldSelect value="생활공간" />
-        <ModalFieldSelect />
-        <ModalFieldSelect />
-        <ModalFieldSelect />
+        {data.map(({ id, name }) => (
+          <ModalFieldSelect key={id} name={name} />
+        ))}
       </SelectList>
     </Wrapper>
   );
@@ -31,5 +30,5 @@ const Title = styled.h1`
 `;
 
 const SelectList = styled.div`
-  ${mixin.flexGrid}
+  ${mixin.flexGrid("start")}
 `;

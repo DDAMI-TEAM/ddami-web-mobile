@@ -19,7 +19,7 @@ const PieceList = () => {
 export default PieceList;
 
 const Wrapper = styled.div`
-  ${mixin.flexGrid}
+  ${mixin.flexGrid()}
   width: 100%;
   padding: 16px;
   background-color: ${({ theme }) => theme.colors.white};
