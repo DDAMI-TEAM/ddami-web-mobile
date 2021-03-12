@@ -12,6 +12,8 @@ const colors = {
   darkpurple: "#9472B6",
   lightpurple: "#EDE3F8",
   white: "#FFFFFF",
+  modal: "#747474",
+  modalHeader: "#F4F0F8",
 };
 
 const background = {
@@ -19,11 +21,14 @@ const background = {
 };
 
 const radius = {
+  modal: "7px",
+  modalHeader: "7px 7px 0 0",
   main: "44px 4px 44px 44px",
 };
 
 const border = {
   light: "0.5px solid #DBDBDB",
+  gray: "1px solid #E4E4E4",
   purple: "0.5px solid #9472B6",
 };
 
