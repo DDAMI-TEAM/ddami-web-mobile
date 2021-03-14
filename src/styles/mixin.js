@@ -24,10 +24,27 @@ const flexGrid = (justifyContent = "space-between") => css`
   align-content: space-around;
 `;
 
+const hideScroll = css`
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+`;
+
+const scrollX = css`
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+`;
+
 const mixin = {
   flex,
   flexGrid,
   shorthand,
+  hideScroll,
+  scrollX,
 };
 
 export default mixin;
