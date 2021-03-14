@@ -1,11 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import ModalField from "./ModalField";
 import ModalBottom from "./ModalBottom";
+import { setTownFilters, setTownFilterModal } from "../../../store/actions";
 
 const modalBackground = "modal-background";
 
 const Modal = ({ setClose }) => {
+  const [filter, setFilter] = useState({});
+  const dispatch = useDispatch();
+
   useEffect(() => {
     return setClose;
   }, [setClose]);
@@ -14,16 +19,32 @@ const Modal = ({ setClose }) => {
     if (target.id === modalBackground) return setClose();
   };
 
+  const onClickApplyButton = () => {
+    const selectedFilters = Object.keys(filter).reduce((prev, field) => {
+      return [...prev, ...filter[field]];
+    }, []);
+
+    dispatch(setTownFilters(selectedFilters));
+    dispatch(setTownFilterModal(false));
+  };
+
   return (
     <Background id={modalBackground} onClick={onClickModal}>
       <ModalWrapper>
         <Header>필터</Header>
         <ContentSection>
           {MODAL_DATA.map(({ id, title, data }) => (
-            <ModalField key={id} title={title} data={data} />
+            <ModalField
+              key={id}
+              id={id}
+              title={title}
+              data={data}
+              setFilter={setFilter}
+              filter={filter}
+            />
           ))}
         </ContentSection>
-        <ModalBottom />
+        <ModalBottom onClickApplyButton={onClickApplyButton} />
       </ModalWrapper>
     </Background>
   );

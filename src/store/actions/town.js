@@ -6,3 +6,10 @@ export const setTownFilterModal = (modalState) => {
     payload: modalState,
   };
 };
+
+export const setTownFilters = (filters) => {
+  return {
+    type: types.SET_TOWN_FILTER,
+    payload: filters,
+  };
+};

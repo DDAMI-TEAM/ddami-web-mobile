@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { mixin } from "../../../styles";
 
-const ModalBottom = () => {
+const ModalBottom = ({ onClickApplyButton }) => {
   return (
     <Wrapper>
       <Button>모두 초기화</Button>
-      <ApplyButton>적용하기</ApplyButton>
+      <ApplyButton onClick={onClickApplyButton}>적용하기</ApplyButton>
     </Wrapper>
   );
 };

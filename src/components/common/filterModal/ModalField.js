@@ -3,7 +3,7 @@ import styled from "styled-components";
 import ModalFieldSelect, { FILTER_TYPE } from "./ModalFieldSelect";
 import { mixin } from "../../../styles";
 
-const ModalField = ({ title, data }) => {
+const ModalField = ({ id, title, data, filter, setFilter }) => {
   const [activeFilters, setActiveFilters] = useState([]);
 
   const isActive = (id) => {
@@ -22,8 +22,13 @@ const ModalField = ({ title, data }) => {
   };
 
   useEffect(() => {
-    console.log(activeFilters);
-  }, [activeFilters]);
+    if (filter[id] !== activeFilters) {
+      setFilter({
+        ...filter,
+        [id]: activeFilters,
+      });
+    }
+  }, [activeFilters, filter, id, setFilter]);
 
   const setActiveAllFilter = () => {
     if (data.length === activeFilters.length) setActiveFilters([]);
