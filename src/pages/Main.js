@@ -1,16 +1,17 @@
 import React from "react";
-import Promotion from "../components/main/Promotion";
-import MainDdamiShop from "../components/main/MainDdamiShop";
-import MainDdamiMaeul from "../components/main/MainDdamiMaeul";
+import MainBanner from "../components/main/MainBanner";
+import MainSection from "../components/main/MainSection";
+import { TYPE } from "../constants";
 
 function Main() {
-    return (
-        <>
-            <Promotion/>
-            <MainDdamiShop/>
-            <MainDdamiMaeul/>
-        </>
-    );
+  const { MAIN_TYPE } = TYPE;
+  return (
+    <>
+      <MainBanner />
+      <MainSection type={MAIN_TYPE.TOWN} />
+      <MainSection type={MAIN_TYPE.SHOP} />
+    </>
+  );
 }
 
 export default Main;

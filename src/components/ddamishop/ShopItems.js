@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Menu from "./Menu";
 import SortMenu from "./SortMenu";
 import FilterList from "./FilterList";
-import SellingArticle from "../main/SellingArticle";
+import PreviewArticle from "../common/PreviewArticle";
 
 const ComponentWrapper = styled.div`
   width: 100%;
@@ -21,19 +21,19 @@ const ArticleWrapper = styled.div`
 `;
 
 function ShopItems(props) {
-    return (
-        <ComponentWrapper>
-            <Menu/>
-            <SortMenu/>
-            <FilterList/>
-            <ArticleWrapper>
-                <SellingArticle/>
-                <SellingArticle/>
-                <SellingArticle/>
-                <SellingArticle/>
-            </ArticleWrapper>
-        </ComponentWrapper>
-    );
+  return (
+    <ComponentWrapper>
+      <Menu />
+      <SortMenu />
+      <FilterList />
+      <ArticleWrapper>
+        <PreviewArticle />
+        <PreviewArticle />
+        <PreviewArticle />
+        <PreviewArticle />
+      </ArticleWrapper>
+    </ComponentWrapper>
+  );
 }
 
 export default ShopItems;

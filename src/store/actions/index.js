@@ -1,129 +1,131 @@
-import * as types from '../types';
+import * as types from "../types";
 
-export function setSearchWord(word){
+export function setSearchWord(word) {
   return {
     type: types.SET_SEARCH_WORD,
-    payload: word
-  }
+    payload: word,
+  };
 }
 
-export function setSearchSort(word){
+export function setSearchSort(word) {
   return {
     type: types.SET_SEARCH_SORT,
-    payload: word
-  }
+    payload: word,
+  };
 }
 
-export function changeSearchTab(tab){
+export function changeSearchTab(tab) {
   return {
     type: types.CHANGE_SEARCH_TAB,
-    payload: tab
-  }
+    payload: tab,
+  };
 }
 
-export function getSearchAuthor(author){
+export function getSearchAuthor(author) {
   return {
     type: types.GET_SEARCH_AUTHOR,
-    payload: author
-  }
+    payload: author,
+  };
 }
 
-export function getSearchAuthorSuccess(payload){
+export function getSearchAuthorSuccess(payload) {
   return {
     type: types.GET_SEARCH_AUTHOR_SUCCESS,
-    payload
-  }
+    payload,
+  };
 }
 
-export function getSearchAuthorFail(){
+export function getSearchAuthorFail() {
   return {
     type: types.GET_SEARCH_AUTHOR_SUCCESS,
-  }
+  };
 }
 
-export function getSearchWork(payload){
+export function getSearchWork(payload) {
   return {
     type: types.GET_SEARCH_WORK,
-    payload
-  }
+    payload,
+  };
 }
 
-export function getSearchWorkSuccess(payload){
+export function getSearchWorkSuccess(payload) {
   return {
     type: types.GET_SEARCH_WORK_SUCCESS,
-    payload
-  }
+    payload,
+  };
 }
 
-export function getSearchWorkFail(){
+export function getSearchWorkFail() {
   return {
     type: types.GET_SEARCH_WORK_FAIL,
-  }
+  };
 }
 
-export function postWorkplaceMy(payload){
+export function postWorkplaceMy(payload) {
   return {
     type: types.POST_WORKPLACE_MY,
-    payload
-  }
+    payload,
+  };
 }
 
-export function postWorkplaceMySuccess(payload){
+export function postWorkplaceMySuccess(payload) {
   return {
     type: types.POST_WORKPLACE_MY_SUCCESS,
-    payload
-  }
+    payload,
+  };
 }
 
-export function postWorkplaceMyFail(){
+export function postWorkplaceMyFail() {
   return {
     type: types.POST_WORKPLACE_MY_FAIL,
-  }
+  };
 }
 
-export function postWorkplace(payload){
+export function postWorkplace(payload) {
   return {
     type: types.POST_WORKPLACE,
-    payload
-  }
+    payload,
+  };
 }
 
-export function postWorkplaceSuccess(payload){
+export function postWorkplaceSuccess(payload) {
   return {
     type: types.POST_WORKPLACE_SUCCESS,
-    payload
-  }
+    payload,
+  };
 }
 
-export function postWorkplaceFail(){
+export function postWorkplaceFail() {
   return {
     type: types.POST_WORKPLACE_FAIL,
-  }
+  };
 }
 
-export function setFooterVisible(payload){
+export function setFooterVisible(payload) {
   return {
     type: types.SET_FOOTER_VISIBLE,
-    payload
-  }
+    payload,
+  };
 }
 
-export function getWorkDetail(payload){
+export function getWorkDetail(payload) {
   return {
     type: types.GET_WORK,
-    payload
-  }
+    payload,
+  };
 }
 
-export function getWorkDetailSuccess(payload){
+export function getWorkDetailSuccess(payload) {
   return {
     type: types.GET_WORK_SUCCESS,
-    payload
-  }
+    payload,
+  };
 }
 
-export function getWorkDetailFail(){
+export function getWorkDetailFail() {
   return {
     type: types.GET_WORK_FAIL,
-  }
+  };
 }
+
+export * from "./town";
