@@ -11,6 +11,11 @@ const flex = (
   justify-content: ${justifyContent};
 `;
 
+const flexColumn = css`
+  display: flex;
+  flex-direction: column;
+`;
+
 const shorthand = css`
   overflow: hidden;
   text-overflow: ellipsis;
@@ -42,6 +47,7 @@ const scrollX = css`
 const mixin = {
   flex,
   flexGrid,
+  flexColumn,
   shorthand,
   hideScroll,
   scrollX,

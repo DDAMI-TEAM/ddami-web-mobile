@@ -1,19 +1,68 @@
 import React from "react";
 import styled from "styled-components";
 import { FollowButton as FB } from "../search/ResultArtist";
+import { mixin } from "../../styles";
 
-const ProfileBody = styled.div`
-  display: flex;
-  padding: 20px 0px 0px 20px;
+const WorkPlaceProfile = (props) => {
+  const {
+    userName,
+    userId,
+    major,
+    imageUrl,
+    follow,
+    followerCount,
+    type,
+  } = props;
+  return (
+    <ProfileWrapper>
+      <ProfileDetails>
+        <ProfileImage>
+          <img src={imageUrl} />
+        </ProfileImage>
+        <Profile>
+          <ProfileInformation>
+            <Name>{userName || "김따미"}</Name>
+            <Id>@{userId || "idid12"}</Id>
+            <Major>{major || "영상 디자인 · 그래픽 디자인"}</Major>
+          </ProfileInformation>
+          <ProfileFollow>
+            팔로워 11 ・ 팔로잉 20
+            {!type && !follow && <FollowButton>+Follow</FollowButton>}
+            {!type && follow && <FollowButton>+Follow</FollowButton>}
+            {type && <ModifyButton>Modify</ModifyButton>}
+          </ProfileFollow>
+        </Profile>
+      </ProfileDetails>
+      <Introduction>
+        <IntroductionText>
+          안녕하세요 김따미입니다 :) 작품 구경하고 가세요 팔로우도
+          부탁드립니다...
+        </IntroductionText>
+      </Introduction>
+    </ProfileWrapper>
+  );
+};
+
+export default WorkPlaceProfile;
+
+const ProfileWrapper = styled.div`
+  ${mixin.flexColumn}
+  padding: 5px 16px;
   font-size: 13px;
   color: #3c3c3c;
   border-radius: 0px 0px 0px 16px;
   background-color: #ffffff;
 `;
+
+const ProfileDetails = styled.div`
+  display: flex;
+  margin-bottom: 23px;
+`;
+
 const ProfileImage = styled.div`
   & > img {
-    width: 92px;
-    height: 92px;
+    width: 75px;
+    height: 75px;
     background-color: #f0f0f0;
     border-radius: 100%;
     box-shadow: 0px 3px 5px #f0f0f0;
@@ -21,40 +70,35 @@ const ProfileImage = styled.div`
 `;
 
 const Profile = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding-left: 20px;
+  ${mixin.flexColumn}
+  padding-left: 19px;
   padding-top: 5px;
 `;
 
 const ProfileInformation = styled.div`
   width: calc(100vw - 140px);
-  border-bottom: 1px solid #f0f0f0;
   padding-bottom: 10px;
 `;
 
 const Name = styled.span`
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 800;
 `;
 
 const Id = styled.span`
-  margin-left: 10px;
+  margin-left: 5px;
   font-weight: 300;
-  color: #bbbbbb;
+  color: ${({ theme }) => theme.colors.gray};
 `;
 
 const Major = styled.div`
-  color: #808080;
-  margin: 5px 0px;
-`;
-
-const Field = styled.div`
-  font-size: 12px;
+  margin-top: 10px;
+  font-size: 11px;
+  color: ${({ theme }) => theme.colors.maingray};
 `;
 
 const ProfileFollow = styled.div`
-  margin: 15px 0px;
+  margin-top: 15px;
   position: relative;
 `;
 
@@ -64,45 +108,16 @@ const FollowButton = styled(FB)`
 `;
 
 const ModifyButton = styled(FB)`
-  top: -85px;
-  right: 7px;
+  top: -69px;
+  right: 0px;
 `;
 
-const WorkPlaceProfile = (props) => {
-  const {
-    userName,
-    userId,
-    major,
-    likeField,
-    imageUrl,
-    follow,
-    followerCount,
-    type,
-  } = props;
-  return (
-    <ProfileBody>
-      <ProfileImage>
-        <img src={imageUrl} />
-      </ProfileImage>
-      <Profile>
-        <ProfileInformation>
-          <Name>{userName}</Name>
-          <Id>@{userId}</Id>
-          <Major>{major}</Major>
-          <Field>
-            {likeField && likeField[0]} ・ {likeField && likeField[1]}
-          </Field>
-        </ProfileInformation>
+const Introduction = styled.div`
+  padding: 14px 3px;
+  border-top: 1px solid #f0f0f0;
+`;
 
-        <ProfileFollow>
-          팔로워 {followerCount} ・ 팔로우 20
-          {!type && !follow && <FollowButton>+Follow</FollowButton>}
-          {!type && follow && <FollowButton>+Follow</FollowButton>}
-          {type && <ModifyButton>+Modify</ModifyButton>}
-        </ProfileFollow>
-      </Profile>
-    </ProfileBody>
-  );
-};
-
-export default WorkPlaceProfile;
+const IntroductionText = styled.div`
+  padding: 0 3px;
+  line-height: 22px;
+`;
