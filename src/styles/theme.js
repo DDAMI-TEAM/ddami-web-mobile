@@ -14,6 +14,7 @@ const colors = {
   white: "#FFFFFF",
   modal: "#747474",
   modalHeader: "#F4F0F8",
+  background: "#F4F0F8",
 };
 
 const background = {

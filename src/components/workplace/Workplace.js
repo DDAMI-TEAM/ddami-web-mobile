@@ -2,14 +2,18 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import WorkPlaceProfile from "../workplaceProfile";
-import WorkplaceList from "./WorkplaceList";
-import { postWorkplace, postWorkplaceMy } from "../../store/actions";
+import WorkplaceList from "../workplaceList";
+import {
+  postWorkplace,
+  postWorkplaceMy,
+  setFooterVisible,
+} from "../../store/actions";
 
 const WorkplaceBody = styled.section`
-  background-color: #f0f0f6;
+  background-color: ${({ theme }) => theme.colors.background}; ;
 `;
 
-const WorkPlace = (props) => {
+const WorkPlace = ({ match: { params }, ...props }) => {
   const {
     type,
     workplace: { user },
@@ -17,11 +21,15 @@ const WorkPlace = (props) => {
     return store.workplace;
   });
   const myPieces = user ? user.myPieces : [];
-  const dispatch = useDispatch();
-  const {
-    match: { params },
-  } = props;
   const { ArtistId } = params;
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setFooterVisible(false));
+    return () => dispatch(setFooterVisible(true));
+  }, [dispatch]);
+
   useEffect(() => {
     if (ArtistId === "my") dispatch(postWorkplaceMy({}));
     else dispatch(postWorkplace({ id: ArtistId }));
