@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import WorkPlaceProfile from "../workplaceProfile";
-import WorkplaceList from "../workplaceList";
+import WorkPlaceProfile from "../WorkplaceProfile";
+import WorkplaceList from "../WorkplaceList";
 import {
   postWorkplace,
   postWorkplaceMy,
