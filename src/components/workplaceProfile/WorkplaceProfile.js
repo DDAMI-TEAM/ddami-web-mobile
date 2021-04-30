@@ -118,6 +118,7 @@ const Introduction = styled.div`
 `;
 
 const IntroductionText = styled.div`
+  margin-right: 40px;
   padding: 0 3px;
   line-height: 22px;
 `;
