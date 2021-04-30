@@ -1,1 +1,1 @@
-export { * as AddWorkButton } from './AddWorkButton';
+export * as AddWorkButton from "./AddWorkButton";
