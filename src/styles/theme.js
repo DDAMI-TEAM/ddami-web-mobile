@@ -19,6 +19,7 @@ const colors = {
 
 const background = {
   main: "linear-gradient(270deg, #6F5DB4 0%, #A36A9B 100%)",
+  mainTransparent: "linear-gradient(270deg, #6F5DB408 0%, #A36A9B08 100%)",
   modal: "rgb(116, 116, 116, 0.9)",
   drawer: "rgb(35, 35, 35, 0.6)",
 };

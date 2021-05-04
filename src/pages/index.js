@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import Main from "./Main";
 import WorkplacePage from "./WorkplacePage";
 import Search from "../components/search/Search";
-import Like from "../components/hamburger/Like";
+import Like from "./Like";
 import Purchase from "../components/hamburger/Purchase";
 import Subscribe from "../components/hamburger/Subscribe";
 import Setting from "../components/hamburger/Setting";

@@ -1,14 +1,10 @@
-import React from 'react';
+import React from "react";
 import styled from "styled-components";
-import 'antd/dist/antd.css';
-import {Button, Dropdown, Menu} from 'antd';
-
-import {EllipsisOutlined} from '@ant-design/icons';
 
 const Body = styled.div`
   width: 100%;
   height: 100%;
-  background: #F0F0F6;
+  background: #f0f0f6;
 `;
 
 const LikeTitle = styled.div`
@@ -16,9 +12,9 @@ const LikeTitle = styled.div`
   padding-bottom: 15px;
   font-size: 18px;
   text-align: center;
-  width: 100%; 
+  width: 100%;
   height: 51px;
-  background: #F0F0F6;
+  background: #f0f0f6;
 `;
 
 const LikeSection = styled.div`
@@ -57,63 +53,73 @@ const SubTitle = styled.div`
   background: bisque;
 `;
 const menu = (
-    <Menu>
-        <Menu.Item>
-            <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
-                1st menu item
-            </a>
-        </Menu.Item>
-        <Menu.Item>
-            <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
-                2nd menu item
-            </a>
-        </Menu.Item>
-        <Menu.Item>
-            <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
-                3rd menu item
-            </a>
-        </Menu.Item>
-    </Menu>
+  <div></div>
+  //   <Menu>
+  //     <Menu.Item>
+  //       <a
+  //         target="_blank"
+  //         rel="noopener noreferrer"
+  //         href="http://www.alipay.com/"
+  //       >
+  //         1st menu item
+  //       </a>
+  //     </Menu.Item>
+  //     <Menu.Item>
+  //       <a
+  //         target="_blank"
+  //         rel="noopener noreferrer"
+  //         href="http://www.taobao.com/"
+  //       >
+  //         2nd menu item
+  //       </a>
+  //     </Menu.Item>
+  //     <Menu.Item>
+  //       <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
+  //         3rd menu item
+  //       </a>
+  //     </Menu.Item>
+  //   </Menu>
 );
 
 const DropdownMenu = () => {
-    return (
-        <Dropdown key="more" overlay={menu}>
-            <Button
-                style={{
-                    border: 'none',
-                    padding: 0,
-                }}
-            >
-                <EllipsisOutlined
-                    style={{
-                        fontSize: 20,
-                        verticalAlign: 'top',
-                    }}
-                />
-            </Button>
-        </Dropdown>
-    );
+  return (
+    <div></div>
+    // <Dropdown key="more" overlay={menu}>
+    //   <Button
+    //     style={{
+    //       border: "none",
+    //       padding: 0,
+    //     }}
+    //   >
+    //     <EllipsisOutlined
+    //       style={{
+    //         fontSize: 20,
+    //         verticalAlign: "top",
+    //       }}
+    //     />
+    //   </Button>
+    // </Dropdown>
+  );
 };
 
 const Subscribe = () => {
-    return (
-        <>
-            <Body>
-                <LikeTitle>찜한 목록</LikeTitle>
-                <LikeSection>
-                    <SubscribeSection>
-                        <SubImg/>
-                        <SubSection>
-                            <SubTitle>
-                                <DropdownMenu/>
-                            </SubTitle>
-                        </SubSection>
-                    </SubscribeSection>
-                </LikeSection>
-            </Body>
-        </>
-    );
+  return (
+    <>
+      <Body>
+        <LikeTitle>찜한 목록</LikeTitle>
+        <LikeSection>
+          <SubscribeSection>
+            <SubImg />
+            <SubSection>
+              <SubTitle>
+                <DropdownMenu />
+              </SubTitle>
+            </SubSection>
+          </SubscribeSection>
+        </LikeSection>
+      </Body>
+    </>
+  );
 };
 
 export default Subscribe;

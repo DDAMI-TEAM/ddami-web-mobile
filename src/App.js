@@ -22,6 +22,9 @@ const GlobalStyle = createGlobalStyle`
       width: 100%;
     }
    }
+  * {
+     box-sizing: border-box;
+  }
   *:focus { outline:none; }
   button {
     padding: 0;
